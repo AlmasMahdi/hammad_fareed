@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — hammad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --bg:#070726; /* deep navy */
+      --card:#0f1230; /* panel */
+      --muted:#9aa0c7;
+      --accent:#6e0707; /* red */
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Montserrat,system-ui,Arial,sans-serif;background:var(--bg);color:#fff}
+
+    /* Page container — centers content */
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+
+    /* Card */
+    .card{width:100%;max-width:1100px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--card);border-radius:18px;padding:48px;box-shadow:0 30px 50px rgba(3,6,30,0.7);display:grid;grid-template-columns:1fr 420px;gap:28px;position:relative;overflow:visible}
+
+    /* Nav */
+    .nav{position:absolute;right:28px;top:28px;display:flex;gap:18px;align-items:center}
+    .nav a{color:var(--muted);text-decoration:none;padding:8px 14px;border-radius:8px;font-size:14px}
+    .nav a.active{background:var(--accent);color:#fff;font-weight:600}
+    .ctabtn{border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:18px}
+
+    /* Left column */
+    .left h4{margin:0;color:var(--muted);font-weight:600;font-size:16px}
+    .hero-name{font-size:72px;line-height:0.95;margin:8px 0 14px;font-weight:800}
+    .sub{color:var(--muted);margin-bottom:22px}
+    .socials{display:flex;gap:12px;align-items:center;margin:18px 0}
+    .socials a{color:#fff;opacity:0.9;text-decoration:none;font-size:18px}
+
+    .buttons{display:flex;gap:14px;margin-top:12px}
+    .btn{padding:12px 26px;border: radius 30px;border:none;cursor:pointer;font-weight:600}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff}
+
+    /* Right column (image) */
+    .right{display:flex;align-items:center;justify-content:center;position:relative}
+    .portrait{width:320px;height: 300px;border-radius:14px;overflow:hidden;box-shadow:inset 0 0 80px rgba(0,0,0,0.6);background:linear-gradient(180deg,#11102a,#060616);display:flex;align-items:center;justify-content:center}
+    .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+    /* Decorative red circles */
+    .decor{position:absolute;border-radius:999px;filter:blur(0.2px)}
+    .decor.big{width:180px;height:180px;right:-60px;top:-70px;background:radial-gradient(circle at 30% 30%,var(--accent),#c10000);z-index:0}
+    .decor.small1{width:52px;height:52px;right:40px;top:130px;background:var(--accent)}
+    .decor.small2{width:72px;height:72px;left:-36px;bottom:-36px;background:radial-gradient(circle at 30% 30%,#ff2b2b,#c10000)}
+
+    /* Dotted pattern (left top) */
+    .dots{position:absolute;left:42px;top:28px;opacity:0.07;width:220px;height:80px;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:12px 12px;border-radius:8px}
+
+    /* mini vertical menu numbers */
+    .vnums{position:absolute;right:8px;top:140px;display:flex;flex-direction:column;gap:10px;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .card{grid-template-columns:1fr 360px;padding:34px}
+      .hero-name{font-size:56px}
+    }
+    @media (max-width:800px){
+      .card{grid-template-columns:1fr;max-width:920px;padding:28px}
+      .right{order:2;margin-top:8px}
+      .left{order:1}
+      .portrait{width:260px;height:340px}
+      .nav{position:static;justify-content:flex-end;margin-bottom:8px}
+    }
+    @media (max-width:480px){
+      .wrap{padding:18px}
+      .card{padding:18px}
+      .hero-name{font-size:44px}
+      .portrait{width:220px;height:300px}
+      .nav a{font-size:13px;padding:6px 10px}
+      .buttons{flex-direction:column}
+      .buttons .btn{width:100%}
+    }
+
+    /* small helper */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+
+      <div class="dots" aria-hidden></div>
+      <div class="decor big" aria-hidden></div>
+      <div class="decor small1" aria-hidden></div>
+      <div class="decor small2" aria-hidden></div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about" class="active">About</a>
+        <a href="#contact">Contact</a>
+        <a class="ctabtn" href="#getstarted">Get Started</a>
+      </nav>
+
+      <section class="left">
+        <h4>Hello, I am</h4>
+        <h1 class="hero-name">Hammad<br>Fareed</h1>
+        <p class="sub">A young <span class="muted">HTML/CSS</span> designer with a passion for mobile & web design. Focused on clean interfaces and delightful micro-interactions.</p>
+        <h1>Contact Me:</h1>
+
+        <div class="socials" aria-hidden>
+          <a href="https://www.tiktok.com/@hammadjhorar876?_r=1&_t=ZS-91kb1doNNh7" title="Behance"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://www.facebook.com/share/1BUmR26AXE/" title="Dribbble"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/hammad.f658?igsh=MTVsdTlvNnYybWNyNg==" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.snapchat.com/add/h_hammadu2025?share_id=0vzYOG26qO8&locale=en-PK" title="LinkedIn"><i class="fa-brands fa-snapchat"></i></a>
+          <a href="https://wa.me/qr/EQPHRL2JN24RK1" title="Pinterest"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p style="margin-top:20px;color:var(--muted);font-size:13px">Find me on — or drop a message via the contact section.</p>
+      </section>
+      <aside class="right">
+        <div class="vnums" aria-hidden>
+          <span>01</span>
+          <span>02</span>
+          <span>03</span>
+          <span>04</span>
+        </div>
+
+        <div class="portrait" role="img" aria-label="Portrait">
+          <!-- Replace the src with your own portrait. A sample image file name is used below if you want to preview locally. -->
+          <img src="profile.jpg" alt="portrait (replace with your image)" onerror="this.style.background='linear-gradient(180deg,#111,#07061a)';this.alt='portrait placeholder'">
+        </div>
+      </aside>
+
+    </div>
+  </div>
+<!-- Social Media Section -->
+<section id="social" style="padding:60px px;text-align:center;max-width:900px;margin:0 auto;color:#fff;">
+  <h2 style="font-size:36px;font-weight:800;margin-bottom:20px;">Contact Me</h2>
+  <p style="color:var(--muted);max-width:600px;margin:0 auto 30px;">
+    Connect with me on social media for updates.
+  </p>
+
+  <div style="display:flex;justify-content:center;gap:19px;flex-wrap:wrap;margin-top:25px;">
+
+    <!-- Primary style like “Hire Me” -->
+    <a href="https://www.instagram.com/hammad.f658?igsh=MTVsdTlvNnYybWNyNg==" 
+       style="padding:12px 26px;border-radius:30px;
+              background:#aa1d93;color:#fff;text-decoration:none;
+              font-weight:600;display:flex;align-items:center;gap:8px;">
+      <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+
+    <!-- Ghost style like “Portfolio” button -->
+    <a href="https://www.facebook.com/share/1BUmR26AXE/" 
+       style="padding:12px 26px;border-radius:30px;
+              background-color: #0015ff;border:1px solid rgba(255,255,255,0.12);
+              color:#fff;text-decoration:none;font-weight:600;
+              display:flex;align-items:center;gap:8px;">
+      <i class="fa-brands fa-facebook"></i> Facebook
+    </a>
+
+    <a href="https://wa.me/qr/EQPHRL2JN24RK1" 
+       style="padding:12px 26px;border-radius:30px;
+              background-color: green;border:1px solid rgba(255,255,255,0.12);
+              color:#fff;text-decoration:none;font-weight:600;
+              display:flex;align-items:center;gap:8px;">
+      <i class="fa-brands fa-whatsapp"></i> Whatsapp
+    </a>
+
+    <a href="https://www.snapchat.com/add/h_hammadu2025?share_id=0vzYOG26qO8&locale=en-PK" 
+       style="padding:12px 26px;border-radius:30px;
+              background-color: rgb(123, 123, 35);border:1px solid rgba(255,255,255,0.12);
+              color:#fff;text-decoration:none;font-weight:600;
+              display:flex;align-items:center;gap:8px;">
+      <i class="fa-brands fa-snapchat"></i> Snapchat
+    </a>
+
+    <a href="https://www.tiktok.com/@hammadjhorar876?_r=1&_t=ZS-91kb1doNNh7" 
+       style="padding:12px 26px;border-radius:30px;
+              background-color: #060616;border:1px solid rgba(255,255,255,0.12);
+              color:#fff;text-decoration:none;font-weight:600;
+              display:flex;align-items:center;gap:8px;">
+      <i class="fa-brands fa-tiktok"></i> Tiktok
+    </a>
+
+  </div>
+</section>
+
+  <script>
+    // Small enhancement: keyboard accessible quick focus for Hire Me
+    document.querySelectorAll('.btn').forEach(b=>b.addEventListener('keydown',e=>{ if(e.key==='Enter') b.click(); }))
+
+    // Smooth scroll for nav anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href')
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth'});
+        }
+      })
+    })
+  </script>
+  <!-- Direct Message Section (Formspree Integrated) -->
+<section id="contact" style="padding:2Zpx 20px;max-width:900px;margin:0 auto;text-align:center;color:#fff;">
+  <h4 style="font-size:30px;font-weight:800;margin-bottom:20px;">Send Me a Direct Message</h4>
+  <p style="color:var(--muted);max-width:600px;margin:0 auto 30px;"></p>
+
+  <!-- Replace YOUR_FORM_ID with your Formspree ID -->
+  <form action="https://formspree.io/f/xangozjr" method="POST" style="display:grid;gap:18px;max-width:600px;margin:0 auto;">
+    
+    <input 
+      type="text" 
+      name="name"
+      placeholder="Your Name" 
+      required 
+      style="padding:14px;border-radius:10px;border:none;background:rgba(255,255,255,0.08);color:#fff;"
+    >
+
+    <input 
+      type="email" 
+      name="email"
+      placeholder="Your Email" 
+      required 
+      style="padding:14px;border-radius:10px;border:none;background:rgba(255,255,255,0.08);color:#fff;"
+    >
+
+    <textarea 
+      name="message"
+      placeholder="Your Message" 
+      rows="5" 
+      required 
+      style="padding:14px;border-radius:10px;border:none;background:rgba(255,255,255,0.08);color:#fff;"
+    ></textarea>
+
+    <button 
+      type="submit" 
+      class="btn primary" 
+      style="width:100%;max-width:200px;margin:0 auto;"
+    >
+      Send Message
+    </button>
+  </form>
+</section>
+</body>
+</html>
